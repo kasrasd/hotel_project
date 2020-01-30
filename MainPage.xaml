@@ -1,0 +1,221 @@
+﻿<Page x:Class="hotel_project1.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:local="clr-namespace:hotel_project1"
+      xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      Background="{DynamicResource MaterialDesignPaper}"
+      TextElement.FontWeight="Medium"
+      TextElement.FontSize="14"
+      FontFamily="{materialDesign:MaterialDesignFont}"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="MainPage">
+
+    <DockPanel x:Name="mainPage">
+
+        
+        <Grid>
+
+            
+            <Grid.Background>
+                <ImageBrush ImageSource="Images/pages/loby.jpg"/>
+            </Grid.Background>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="22"/>
+                <RowDefinition Height="139"/>
+                <RowDefinition Height="139*"/>
+                <RowDefinition Height="199*"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="1"
+                   Grid.ColumnSpan="2"
+                   FontSize="32"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Foreground="#45a29e"
+                   FontFamily="Exotc350 DmBd BT" Margin="265,0,265,47" Padding="5" Height="92" Width="162" Grid.Row="1">
+                Welcome To
+                <LineBreak/>
+            </TextBlock>
+            <TextBlock 
+                FontSize="72"
+                FontFamily="Exotc350 DmBd BT"
+                Foreground="#66fcf1"
+                Width="240"
+                Height="auto"
+            Grid.Column="1"
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Center"
+            Margin="226,50,226,10">
+                HILTON
+            </TextBlock>
+
+            <Border 
+                Background="#b30b0c10"
+                CornerRadius="20"
+                Height="300"
+                VerticalAlignment="Center"
+                md:ShadowAssist.ShadowDepth="Depth2"
+                Grid.Column="2"
+                Grid.Row="2"
+                Grid.RowSpan="2"
+                FlowDirection="RightToLeft" HorizontalAlignment="Right" Width="300">
+                <DockPanel>
+                    <Grid VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <!--Title-->
+                            <RowDefinition Height="Auto"/>
+                            <!--Form-->
+                            <RowDefinition Height="auto"/>
+                            <!--Controls-->
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+
+                        <!--Form-->
+                        <TextBlock Grid.Row="1"
+                           TextAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="30 10 20 10">
+                    
+                        <TextBox Name="TxtUsername" 
+                                 Width="220"
+                                 BorderBrush="#45a29e"
+                                 Margin="10"
+                                 Padding="5 0"
+                                 FontFamily="{StaticResource Vazir}"
+                                 md:HintAssist.IsFloating="True"
+                                 Foreground="#45a29e"
+                                 VerticalAlignment="Center">
+                            <md:HintAssist.Hint>
+                                <StackPanel Orientation="Horizontal">
+                                    <md:PackIcon Kind="AccountOutline"
+                                                 VerticalAlignment="Center"
+                                                 Margin="5 0"
+                                                 Foreground="#66fcf1"/>
+                                    <Label Padding="0" Foreground="#c5c6c7">نام کاربری</Label>
+                                </StackPanel>
+                            </md:HintAssist.Hint>
+                        </TextBox>
+                        
+                        <LineBreak/>
+                        <LineBreak/>
+                        
+                        <PasswordBox Name="TxtPassword" 
+                                 Width="{Binding ElementName=TxtUsername, Path=Width}"
+                                 BorderBrush="{Binding ElementName=TxtUsername, Path=BorderBrush}"
+                                 Margin="{Binding ElementName=TxtUsername, Path=Margin}"
+                                 Padding="{Binding ElementName=TxtUsername, Path=Padding}"
+                                 FontFamily="{StaticResource Vazir}"
+                                 md:HintAssist.IsFloating="True"
+                                 Foreground="#45a29e">
+                            <md:HintAssist.Hint>
+                                <StackPanel Orientation="Horizontal">
+                                    <md:PackIcon Kind="LockOutline"
+                                                 VerticalAlignment="Center"
+                                                 Margin="5 0"
+                                                 Foreground="#66fcf1"/>
+                                    <Label Padding="0" Foreground="#c5c6c7">کلمه عبور</Label>
+                                </StackPanel>
+                            </md:HintAssist.Hint>
+                        </PasswordBox>
+
+
+                        </TextBlock>
+
+                        <!--Controls-->
+                        <StackPanel Grid.Row="2"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Left"
+                            Margin="60 35">
+                            <Button 
+                                Style="{DynamicResource MaterialDesignRaisedAccentButton}"
+                                Width="auto"
+                                Content="ورود"
+                                FontFamily="{StaticResource Vazir}"
+                                VerticalAlignment="Center"
+                                Click="Button_Click_3">
+                                <Button.ToolTip>
+                                    <ToolTip HasDropShadow="True"
+                                     HorizontalAlignment="Center"
+                                     HorizontalOffset="250"
+                                     VerticalOffset="-85"
+                                     Background="#c5c6c7"
+                                     Foreground="#0b0c10"
+                                     FontFamily="{StaticResource Vazir}">
+                                        اگر قبلا ثبت نام کرده اید پس از تکمیل اطلاعات فوق وارد شوید
+                                    </ToolTip>
+                                </Button.ToolTip>
+                            </Button>
+
+                            <Button Style="{DynamicResource MaterialDesignFlatButton}"
+                                    VerticalAlignment="Center"
+                                    Margin="0 10 0 10"
+                                    Content="مهمان"
+                                    FontFamily="{StaticResource Vazir}"
+                                    Foreground="#45a29e" 
+                                    Width="175"
+                                    Click="Button_Click_2">
+                                <Button.ToolTip>
+                                    <ToolTip HasDropShadow="True"
+                                     HorizontalAlignment="Center"
+                                     HorizontalOffset="200"
+                                     VerticalOffset="-85"
+                                     Background="#c5c6c7"
+                                     Foreground="#0b0c10"
+                                     FontFamily="{StaticResource Vazir}">
+                                        اگر مهمان هستید اینجا کلیک کنید
+                                    </ToolTip>
+                                </Button.ToolTip>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+
+                </DockPanel>
+            </Border>
+            <Button Style="{DynamicResource MaterialDesignRaisedDarkButton}" Grid.Row="4" Grid.ColumnSpan="4" Height="auto" FontFamily="tahoma" BorderBrush="#aa1f2833" Content="برای دیدن اطلاعات بیشتر کلیک کنید" Foreground="#c5c6c7" 
+                    Click="Button_Click"
+                    >
+                <Button.Background>
+                    <SolidColorBrush Color="#b31f2833"/>
+                </Button.Background>
+            </Button>
+
+            <Viewbox Height="24" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Top" Margin="334,0" >
+                <Canvas Width="24" Height="24">
+                    <Path Data="M7.41,18.41L6,17L12,11L18,17L16.59,18.41L12,13.83L7.41,18.41M7.41,12.41L6,11L12,5L18,11L16.59,12.41L12,7.83L7.41,12.41Z" Fill="#45a29e" />
+                </Canvas>
+            </Viewbox>
+            <Button Style="{DynamicResource MaterialDesignRaisedAccentButton}" 
+                Grid.Column="1" 
+                Width="74" 
+                MaxWidth="80"
+                Content="ثبت نام" HorizontalAlignment="Left" 
+                FontFamily="{StaticResource Vazir}" Margin="0,0,0,96" Height="Auto" Grid.Row="1"
+                Click="Button_Click_1"/>
+
+
+
+
+
+
+
+
+
+
+        </Grid>
+    </DockPanel>
+</Page>

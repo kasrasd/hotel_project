@@ -1,0 +1,236 @@
+﻿<Page x:Class="hotel_project1.RegisterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:local="clr-namespace:hotel_project1"
+      xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      Background="{DynamicResource MaterialDesignPaper}"
+      TextElement.FontWeight="Medium"
+      TextElement.FontSize="14"
+      FontFamily="{materialDesign:MaterialDesignFont}"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="register_page">
+
+    <DockPanel x:Name="PageRegister">
+
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="Images/register-pic.jpg"/>
+            </Grid.Background>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="22"/>
+                <RowDefinition Height="139"/>
+                <RowDefinition Height="139*"/>
+                <RowDefinition Height="199*"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel
+                Orientation="Vertical"
+                Grid.Column="1"
+                 Grid.Row="1"
+                 Grid.RowSpan="3"
+                VerticalAlignment="Center">
+                <TextBlock 
+                    FontSize="100"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Foreground="#45a29e"
+                    FontFamily="Exotc350 DmBd BT" 
+                    Padding="5" 
+                    Height="auto" 
+                    Width="auto">
+                        Hotel
+                </TextBlock>
+                <TextBlock 
+                    FontSize="100"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left"
+                    Foreground="#66fcf1"
+                    FontFamily="Exotc350 DmBd BT" 
+                    Padding="5" 
+                    Height="auto" 
+                    Width="auto"
+                   >
+                        HILTON
+                </TextBlock>
+
+            </StackPanel>
+
+            <Border 
+                Background="#b30b0c10"
+                CornerRadius="20"
+                Height="auto"
+                VerticalAlignment="Center"
+                md:ShadowAssist.ShadowDepth="Depth2"
+                Grid.Column="2"
+                Grid.Row="1"
+                Grid.RowSpan="4"
+                FlowDirection="RightToLeft"
+                HorizontalAlignment="Center"
+                Width="auto">
+
+                <DockPanel>
+                    <Grid VerticalAlignment="Center">
+                        <Grid.RowDefinitions>
+                            <!--Title-->
+                            <RowDefinition Height="Auto"/>
+                            <!--Form-->
+                            <RowDefinition Height="auto"/>
+                            <!--Controls-->
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+
+                        <!--Form-->
+                        <TextBlock Grid.Row="1"
+                           TextAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="30 10 20 10">
+                            
+                            <TextBlock
+                                Foreground="#c5c6c7"
+                                TextWrapping="Wrap"
+                                FontFamily="{StaticResource Vazir}"
+                                FontSize="14">
+                                درصورت ثبت نام از خدمات عضویت vip بهره مند میشوید
+                            </TextBlock>
+                            
+                            
+                            <LineBreak/>
+                            <LineBreak/>
+                    
+                        <TextBox Name="Txtname" 
+                                 Width="220"
+                                 BorderBrush="#45a29e"
+                                 Padding="5 0"
+                                 FontFamily="{StaticResource Vazir}"
+                                 md:HintAssist.IsFloating="True"
+                                 Foreground="#45a29e"
+                                 VerticalAlignment="Center">
+                            <md:HintAssist.Hint>
+                                <StackPanel Orientation="Horizontal">
+                                    <md:PackIcon Kind="AccountOutline"
+                                                 VerticalAlignment="Center"
+                                                 Margin="5 0"
+                                                 Foreground="#66fcf1"/>
+                                    <Label Padding="0" Foreground="#c5c6c7">نام و نام خانوادگی</Label>
+                                </StackPanel>
+                            </md:HintAssist.Hint>
+                        </TextBox>
+                        
+                        <LineBreak/>
+                        <LineBreak/>
+                            <TextBox Name="TxtUname" 
+                                 Width="220"
+                                 BorderBrush="#45a29e"
+                                 Margin="10"
+                                 Padding="5 0"
+                                 FontFamily="{StaticResource Vazir}"
+                                 md:HintAssist.IsFloating="True"
+                                 Foreground="#45a29e"
+                                 VerticalAlignment="Center">
+                            <md:HintAssist.Hint>
+                                <StackPanel Orientation="Horizontal">
+                                    <md:PackIcon Kind="AccountOutline"
+                                                 VerticalAlignment="Center"
+                                                 Margin="5 0"
+                                                 Foreground="#66fcf1"/>
+                                    <Label Padding="0" Foreground="#c5c6c7">نام کاربری</Label>
+                                </StackPanel>
+                            </md:HintAssist.Hint>
+                        </TextBox>
+                        
+                        <LineBreak/>
+                        <LineBreak/>
+                        
+                        <PasswordBox Name="TxtPassword" 
+                                 Width="{Binding ElementName=TxtUsername, Path=Width}"
+                                 BorderBrush="{Binding ElementName=TxtUsername, Path=BorderBrush}"
+                                 Margin="{Binding ElementName=TxtUsername, Path=Margin}"
+                                 Padding="{Binding ElementName=TxtUsername, Path=Padding}"
+                                 FontFamily="{StaticResource Vazir}"
+                                 md:HintAssist.IsFloating="True"
+                                 Foreground="#45a29e">
+                            <md:HintAssist.Hint>
+                                <StackPanel Orientation="Horizontal">
+                                    <md:PackIcon Kind="LockOutline"
+                                                 VerticalAlignment="Center"
+                                                 Margin="5 0"
+                                                 Foreground="#66fcf1"/>
+                                    <Label Padding="0" Foreground="#c5c6c7">کلمه عبور</Label>
+                                </StackPanel>
+                            </md:HintAssist.Hint>
+                        </PasswordBox>
+                            
+                        <LineBreak/>
+                        <LineBreak/>
+
+                        <PasswordBox 
+                            Name="TxtPasswordConfirm" 
+                            Width="{Binding ElementName=TxtUsername, Path=Width}"
+                            BorderBrush="{Binding ElementName=TxtUsername, Path=BorderBrush}"
+                            Margin="{Binding ElementName=TxtUsername, Path=Margin}"
+                            Padding="{Binding ElementName=TxtUsername, Path=Padding}"
+                            FontFamily="{StaticResource Vazir}"
+                            md:HintAssist.IsFloating="True"
+                            Foreground="#45a29e">
+                            <md:HintAssist.Hint>
+                                <StackPanel Orientation="Horizontal">
+                                    <md:PackIcon Kind="LockOutline"
+                                                 VerticalAlignment="Center"
+                                                 Margin="5 0"
+                                                 Foreground="#66fcf1"/>
+                                    <Label Padding="0" Foreground="#c5c6c7">تکرار کلمه عبور</Label>
+                                </StackPanel>
+                            </md:HintAssist.Hint>
+                        </PasswordBox>
+                            
+                        <LineBreak/>
+                        <LineBreak/>
+                            
+
+                        </TextBlock>
+
+                        <!--Controls-->
+                        <StackPanel Grid.Row="2"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center">
+                            <Button 
+                                Style="{DynamicResource MaterialDesignRaisedAccentButton}"
+                                Width="auto"
+                                Content="ثبت نام"
+                                FontFamily="{StaticResource Vazir}"
+                                VerticalAlignment="Center"
+                                Click="saveBtn_Click">
+                            </Button>
+
+                            <Button Style="{DynamicResource MaterialDesignFlatButton}"
+                                VerticalAlignment="Center"
+                                Margin="0 10 0 10"
+                                Content="انصراف"
+                                FontFamily="{StaticResource Vazir}"
+                                Foreground="#45a29e" Width="175"
+                                    Click="Button_Click">
+                            </Button>
+
+                        </StackPanel>
+                    </Grid>
+
+                </DockPanel>
+            </Border>
+
+
+        </Grid>
+    </DockPanel>
+</Page>
